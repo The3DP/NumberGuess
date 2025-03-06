@@ -1,7 +1,90 @@
-THIS CODE HAS NOT BEEN ADDED YET AND IS STILL A WORK IN PROGRESS.
+The Loft code has been sucessfully added.
 
-THE LOFT CODE IS A "SECONDARY CODE" OR A "RECREATIONAL" CODE.
+It will be compared to the current code itself.
 
-THESE/THIS OPTION(S) DEPENDS ON THE USAGE.
+-
+--
+---
+----
+-----
+------
+-------
+--------
+---------
+----------
+-----------
+------------
+import random
 
-CODE WILL BE PROVIDED HERE WHEN COMPLETE.
+def choose_difficulty():
+    """Function to choose the difficulty and return the range of numbers."""
+    difficulty_levels = {
+        1: 10,    # Facile Mode
+        2: 50,    # Easy
+        3: 100,   # Medium
+        4: 200,   # Hard
+        5: 1000   # Turbo Mode
+    }
+
+    print("Welcome to NumberAll!")
+    print("Choose a difficulty level:")
+    print("1. Facile Mode (1-10)")
+    print("2. Easy (1-50)")
+    print("3. Medium (1-100)")
+    print("4. Hard (1-200)")
+    print("5. Turbo Mode (1-1000)")
+
+    while True:
+        try:
+            difficulty = int(input("Enter the number for your chosen difficulty (1/2/3/4/5): "))
+            if difficulty in difficulty_levels:
+                return difficulty_levels[difficulty]
+            else:
+                print("Please choose a valid difficulty (1/2/3/4/5).")
+        except ValueError:
+            print("Invalid input. Please enter a number (1/2/3/4/5).")
+
+def play_game():
+    """Function to play the number guessing game."""
+    number_range = choose_difficulty()
+    number_to_guess = random.randint(1, number_range)
+    attempts = 0
+    max_attempts = 10  # Set max attempts (can be customized per difficulty)
+    guess = None
+
+    print(f"Great! I have chosen a number between 1 and {number_range}. Try to guess it!")
+
+    while guess != number_to_guess and attempts < max_attempts:
+        try:
+            guess = int(input("Enter your guess: "))
+            attempts += 1
+
+            if guess < number_to_guess:
+                print("Too low! Try again.")
+            elif guess > number_to_guess:
+                print("Too high! Try again.")
+            else:
+                print(f"Congratulations! You've guessed the number in {attempts} attempts!")
+                break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    if guess != number_to_guess:
+        print(f"Sorry, you've used all your attempts! The correct number was {number_to_guess}.")
+
+def play_again():
+    """Function to handle replay logic."""
+    while True:
+        play_again_response = input("Would you like to play again? (yes/no): ").strip().lower()
+        if play_again_response == "yes":
+            play_game()
+        elif play_again_response == "no":
+            print("Thanks for playing! Goodbye!")
+            break
+        else:
+            print("Please enter 'yes' or 'no'.")
+
+# Start the game
+play_game()
+play_again()
+
