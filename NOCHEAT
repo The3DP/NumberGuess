@@ -26,3 +26,35 @@ print(f"Random Float: {random_float}")
 choices = ['apple', 'banana', 'cherry']
 random_choice = random.choice(choices)
 print(f"Random Choice: {random_choice}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
