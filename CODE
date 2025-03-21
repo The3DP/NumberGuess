@@ -53,7 +53,7 @@ def guess_the_number():
 
             if guess < number_to_guess:
                 print("Too low! Try again.")
------------------------------------------------------)
+(-----------------------------------------------------)
 CODE (expanded)
 
 
@@ -82,7 +82,7 @@ CODE (expanded)
 
 
 
------------------------------------------------------)
+(-----------------------------------------------------)
 CODE (demonstrative)
             elif guess > number_to_guess:
                 print("Too high! Try again.")
