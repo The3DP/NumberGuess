@@ -1,8 +1,4 @@
-NumberGuess is a number logic game specified with 5 different levels.
-
-# This is a number logic game
-# You may/may not look at the code depending on if you are doing the game/inspecting code.
-# This game has 5 different modes
+# NumberGuess is a number logic game specified with 5 different levels.
 
 import random
 
