@@ -71,6 +71,3 @@ def play_again():
 # Start the game
 play_game()
 play_again()
----
---
--
